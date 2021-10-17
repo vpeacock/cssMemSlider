@@ -1,104 +1,146 @@
-*, ::before, ::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    src: local(Roboto), url(./assets/fonts/roboto-v27-latin-300.woff2) format("woff2"), url(./assets/fonts/roboto-v27-latin-300.woff) format("woff")
 }
-
-.container {
-    /* width: 100%;
-    max-width: 1480px;
-    margin: 0 auto;
-    padding-left: 20px;
-    padding-right: 20px;
-    background-color: rgb(176, 220, 241);
-    padding: 75px 0; */
-}
-
-/* .slider-container  {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} */
 
 body {
-    background: rgb(25, 12, 41);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: thistle;
+    background-image: url('./assets/img/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    display: grid;
+}
+
+.slider-container>input[type="radio"] {
+    display: none;
+}
+
+.slider {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0 auto;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    max-width: 1200px;
+    background-color: #010a2d;
+    padding: 42px 0 78px;
+    border-radius: 30px;
+    border: 4px solid rgb(3 172 254);
+}
+
+.slide {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 75px 0;
+    min-width: 100%;
+    gap: 2%;
+    color: white;
+    font-size: 2rem;
 }
 
-.slider {
-    width: 1100px;
-    height: 600px;
-    overflow: hidden;
-    border: 10px solid palevioletred;
-}
-
-.alignment {
-    display: flex;
-    flex-direction: column;
-}
-
-.navigation {
-
-    display: flex;
-}
-
-.bar {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
-    cursor: pointer;
-    opacity: 1;
-    border: 6px solid red;
-    border-radius: 50%;
-    transition: all .4s ease;
-    background-color: #fff;
-}
-
-.bar:hover {
-    opacity: 1;
-    transform: scale(1.1);
-}
-
-.bar:active {
-    border: 6px solid rgb(124, 11, 11);
-}
-
-input[name="r"] {
-    display: none;
-}
-
-.slides {
-    width: 400%;
-    height: 100%;
-    display: flex;
-}
-
-.slide {
-    width: 25%;
-    transition: all .6s ease;
+.slider-text {
+    align-self: flex-start;
+    margin-bottom: -7%;
+    padding: 0 1%;
+    width: 75%;
+    font-family: "Roboto", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 0.8em;
+    line-height: 33px;
+    letter-spacing: 2px;
+    color: var(--white);
 }
 
 .slide-img {
+    border-radius: 20px;
+    width: 75%;
+}
+
+.navigation {
     width: 100%;
-    height: 100%;
+    display: flex;
+    gap: 0 6px;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 3%;
+    z-index: 2;
+    padding-bottom: 20%;
 }
 
-#r1:checked~.s1 {
-    margin-left: 0;
+.navigation label:last-child {
+    margin-right: 1%;
 }
 
-#r2:checked~.s1 {
-    margin-left: -25%;
+.navigation label {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    border: solid 3px #6aa3cb;
+    border-radius: 100vw;
+    line-height: 1;
+    font-size: 1rem;
+    cursor: pointer;
 }
 
-#r3:checked~.s1 {
-    margin-left: -50%;
+.navigation label:hover {
+    background-color: white;
 }
 
-#r4:checked~.s1 {
-    margin-left: -75%;
+.slider-parent {
+    position: relative;
+}
+
+.slide {
+    transition: transform 0.6s;
+}
+
+#slide2:checked~.slider-parent .slide {
+    transform: translateX(-100%);
+}
+
+#slide3:checked~.slider-parent .slide {
+    transform: translateX(-200%);
+}
+
+#slide4:checked~.slider-parent .slide {
+    transform: translateX(-300%);
+}
+
+#slide1:checked~.navigation [for="slide1"], #slide2:checked~.navigation [for="slide2"], #slide3:checked~.navigation [for="slide3"], #slide4:checked~.navigation [for="slide4"] {
+    background: #6aa3cb;
+}
+
+@media (max-width: 900px) {
+    .slider-text {
+        width: 60%;
+        margin: 10px auto;
+    }
+
+    .navigation {
+        justify-content: center;
+    }
 }

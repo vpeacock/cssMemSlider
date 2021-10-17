@@ -11,28 +11,47 @@
 </head>
 
 <body>
-    <div class="slider alignment">
-        <div class="slides">
-            <input type="radio" name="r" id="r1" checked>
-            <input type="radio" name="r" id="r2">
-            <input type="radio" name="r" id="r3">
-            <input type="radio" name="r" id="r4">
+    <div class="container">
 
-            <div class="slide s1"><img class="slide-img" src="./assets/img/1.jpg" alt=""></div>
-            <div class="slide"><img class="slide-img" src="./assets/img/3.jpg" alt=""></div>
-            <div class="slide"><img class="slide-img" src="./assets/img/4.jpg" alt=""></div>
-            <div class="slide"><img class="slide-img" src="./assets/img/5.jpg" alt=""></div>
+        <div class="slider-container">
+            <input type="radio" id="slide1" name="slider" checked>
+            <input type="radio" id="slide2" name="slider">
+            <input type="radio" id="slide3" name="slider">
+            <input type="radio" id="slide4" name="slider">
+
+            <div class="slider-parent">
+                <div class="slider">
+                    <div class="slide">
+                        <img src="./assets/img/1.jpg" alt="" class="slide-img">
+                        <p class="slider-text">Неработающая программа обычно приносит меньше вреда, чем работающая плохо.</p>
+                    </div>
+                    <div class="slide">
+                        <img src="./assets/img/3.jpg" alt="" class="slide-img">
+                        <p class="slider-text">Это программисты — они верят только в логику и математику.</p>
+                    </div>
+                    <div class="slide">
+                        <img src="./assets/img/4.jpg" alt="" class="slide-img">
+                        <p class="slider-text">Самое лучшее улучшение производительности — это перевод из нерабочего состояния в рабочее.</p>
+                    </div>
+                    <div class="slide">
+                        <img src="./assets/img/5.jpg" alt="" class="slide-img">
+                        <p class="slider-text"> Нельзя доверять коду, который вы не написали полностью сами.</p>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <nav class="navigation">
+                <label for="slide1"></label>
+                <label for="slide2"></label>
+                <label for="slide3"></label>
+                <label for="slide4"></label>
+            </nav>
+
         </div>
+
     </div>
-
-
-    <div class="navigation">
-        <label class="bar" for="r1"></label>
-        <label class="bar" for="r2"></label>
-        <label class="bar" for="r3"></label>
-        <label class="bar" for="r4"></label>
-    </div>
-
 </body>
 
 </html>
