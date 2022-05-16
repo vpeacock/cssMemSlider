@@ -325,6 +325,17 @@ body {
 }
 
 
+#r1:checked~.container .controls [for='r1'] .controls__dot:active,
+#r2:checked~.container .controls [for='r2'] .controls__dot:active,
+#r3:checked~.container .controls [for='r3'] .controls__dot:active,
+#r4:checked~.container .controls [for='r4'] .controls__dot:active,
+#r5:checked~.container .controls [for='r5'] .controls__dot:active,
+#r6:checked~.container .controls [for='r6'] .controls__dot:active,
+#r7:checked~.container .controls [for='r7'] .controls__dot:active {
+    background-color: #41436a;
+}
+
+
 #r1:checked~.container .slides .slide {
     transform: translateX(0%);
 }
